@@ -23,6 +23,7 @@ public class MainClass {
 
         WebElement checkBox = driver.findElement(By.xpath("//span[text()=\"SAMSUNG\"]"));
 
+
         CheckBox bagCheckBox = new CheckBox(checkBox, driver);
         bagCheckBox.checkElement(checkBox);
         bagCheckBox.isChecked(checkBox);
