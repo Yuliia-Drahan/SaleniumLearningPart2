@@ -26,7 +26,8 @@ public class MainClass {
         CheckBox bagCheckBox = new CheckBox(checkBox, driver);
         bagCheckBox.checkElement(checkBox);
         bagCheckBox.isChecked(checkBox);
-        bagCheckBox.SelectRadioButton("XIAOMI", checkBox, driver);
+        bagCheckBox.selectRadioButton("XIAOMI", driver);
+        bagCheckBox.selectRadioButton("XIAOMI", driver);
 
 
     }

@@ -30,10 +30,13 @@ public class CheckBox {
 
 
     //Якщо елемент не селектнутий, то вибираємо його
-    public static void SelectRadioButton (String name, WebElement button, WebDriver driver){
-        String buttonXpath = "//span[text()=\"%s\"]";
-        if (!button.isSelected()){
-            driver.findElement(By.xpath(String.format(buttonXpath,name))).click();
+    public static void selectRadioButton (String name, WebDriver driver){
+        String buttonXpath = "//input[@data-property-title='%s']";
+        WebElement element = driver.findElement(By.xpath(String.format(buttonXpath, name)));
+        if (!element.isSelected()){
+            String labelXpath = "//input[@data-property-title='%s']/following-sibling::label";
+            WebElement label = driver.findElement(By.xpath(String.format(labelXpath, name)));
+            label.click();
         }
     }
 
